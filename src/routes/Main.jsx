@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Main.scss";
 import HelloCard from "../components/HelloCard";
 import InstructionCard from "../components/InstructionCard";
+import AuthCard from "../components/AuthCard";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -27,8 +28,9 @@ const MainPage = () => {
     <>
       <div className="main">
         <div className="main__container">
-          <HelloCard text={textHello} onNext={handleNext} />
-          <InstructionCard />
+          <AuthCard />
+          {/* <HelloCard text={textHello} onNext={handleNext} />
+          <InstructionCard /> */}
         </div>
       </div>
     </>
