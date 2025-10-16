@@ -1,39 +1,14 @@
-import React, { useMemo, useState, useCallback } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React from "react";
 import "./Main.scss";
-import HelloCard from "../components/HelloCard";
-import InstructionCard from "../components/InstructionCard";
-import AuthCard from "../components/AuthCard";
+import ProductCardList from "../components/ProductCardList/ProductCardList";
 
 const MainPage = () => {
-  const navigate = useNavigate();
-  const params = useParams();
-
-  const texts = useMemo(
-    () => ["hello world", "привет мир", "здравствуй, реальность"],
-    []
-  );
-
-  const [textHello, setTextHello] = useState(texts[0]);
-
-  const handleNext = useCallback(() => {
-    setTextHello((prev) => {
-      const i = texts.indexOf(prev);
-      const next = texts[(i + 1) % texts.length];
-      return next;
-    });
-  }, [texts]);
-
   return (
-    <>
-      <div className="main">
-        <div className="main__container">
-          <AuthCard />
-          {/* <HelloCard text={textHello} onNext={handleNext} />
-          <InstructionCard /> */}
-        </div>
+    <div className="main">
+      <div className="main__container">
+        <ProductCardList />
       </div>
-    </>
+    </div>
   );
 };
 
